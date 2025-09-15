@@ -1,62 +1,102 @@
-CaseBrief Backend: Core API Server (Node.js)
-This is the core backend service for the CaseBrief application. Built with Node.js and Express, it provides a robust REST API to handle user authentication, data management, and core application logic.
+# ⚖️ CaseBrief Backend: Core API Server (Node.js)
 
-✨ Core Responsibilities
-User Authentication: Securely manages user registration, login, and session management using JSON Web Tokens (JWT).
+This is the **core backend service** for the CaseBrief application.
+Built with **Node.js** and **Express**, it provides a robust REST API to handle **user authentication**, **data management**, and **core application logic**.
 
-Database Management: Performs all CRUD (Create, Read, Update, Delete) operations for:
+---
 
-User Accounts
+## ✨ Core Responsibilities
 
-Uploaded Documents
+* **User Authentication**
+  Securely manages user registration, login, and sessions using **JWT (JSON Web Tokens)**.
 
-Chat Histories
+* **Database Management**
+  Handles CRUD operations for:
 
-Notebook Entries
+  * User Accounts
+  * Uploaded Documents
+  * Chat Histories
+  * Notebook Entries
 
-Web Scraping: Includes a service to scrape legal case information from public sources like indiankanoon.org.
+* **Web Scraping**
+  Scrapes legal case information from **public sources** like *indiankanoon.org*.
 
-API Gateway: Acts as the primary interface for the frontend application, ensuring data is handled efficiently and securely.
+* **API Gateway**
+  Acts as the **primary interface** for the frontend, ensuring data is served efficiently and securely.
 
-🚀 Technology Stack
-Framework: Express.js
+---
 
-Database: MongoDB with Mongoose
+## 🚀 Technology Stack
 
-Authentication: JSON Web Tokens (JWT)
+* **Framework:** Express.js
+* **Database:** MongoDB with Mongoose
+* **Authentication:** JSON Web Tokens (JWT)
+* **Web Scraping:** Axios & Cheerio
 
-Web Scraping: Axios & Cheerio
+---
 
-⚙️ Getting Started
-Prerequisites
-Node.js and npm
+## ⚙️ Getting Started
 
-A running MongoDB instance (either local or on a cloud service like MongoDB Atlas).
+### 🔑 Prerequisites
 
-Installation & Setup
-Navigate to the Directory:
+* [Node.js](https://nodejs.org/) & npm installed
+* A running **MongoDB instance** (local or cloud, e.g., MongoDB Atlas)
 
-cd sihbackend/NodejsBackend
+---
 
-Install Dependencies:
+### 📥 Installation & Setup
 
-npm install
+1. **Navigate to the Backend Directory**
 
-Configure Environment Variables:
-Create a .env file in the root of the NodejsBackend directory. This is crucial for security and configuration.
+   ```bash
+   cd sihbackend/NodejsBackend
+   ```
 
-# Your MongoDB connection string
-MONGO_URI=your_mongodb_connection_string
+2. **Install Dependencies**
 
-# A strong, secret key for signing JWT tokens
-JWT_SECRET=your_super_secret_jwt_key
+   ```bash
+   npm install
+   ```
 
-# The port for the server to run on
-PORT=4000
+3. **Configure Environment Variables**
+   Create a `.env` file in the root of the project:
 
-Running the Server
-Once the dependencies are installed and the environment variables are configured, you can start the server.
+   ```env
+   # MongoDB connection string
+   MONGO_URI=your_mongodb_connection_string
 
+   # Secret key for signing JWT tokens
+   JWT_SECRET=your_super_secret_jwt_key
+
+   # Port for the server
+   PORT=4000
+   ```
+
+---
+
+### ▶️ Running the Server
+
+Start the Node.js server:
+
+```bash
 npm start
+```
 
-The server will connect to your MongoDB database and start listening for requests, typically on http://localhost:4000. You should see a confirmation message in your terminal.
+The backend will now be running at:
+👉 [http://localhost:4000](http://localhost:4000)
+
+If successful, you’ll see a **confirmation message** in your terminal indicating a successful MongoDB connection and server startup.
+
+---
+
+## 📌 Notes
+
+* Ensure MongoDB is running before starting the backend.
+* The **frontend** and **Django AI backend** should be configured to connect to this API server.
+* Keep your `.env` file **private** and never commit secrets to GitHub.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
